@@ -1,3 +1,4 @@
+//This is singly linked list where we will learn how to create a singly linked list and print
 #include <stdio.h>
 typedef struct singly
 {
