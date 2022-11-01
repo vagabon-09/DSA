@@ -51,10 +51,10 @@ void enqueue(int value)
     }
 }
 
-void display(){
+void display()
+{
     for (int i = f; i <= r; i++)
     {
-       printf("%d\n",arr[i]);
+        printf("%d\n", arr[i]);
     }
-    
 }
