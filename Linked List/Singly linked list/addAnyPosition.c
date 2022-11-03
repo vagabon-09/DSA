@@ -9,7 +9,7 @@ typedef struct singly
 Node *Head = NULL;
 void display();
 void create_node(int value);
-void add_anyPosition(int n);
+void add_anyPosition(int item,int n);
 
 int main()
 {
@@ -39,7 +39,7 @@ int main()
                     scanf("%d",&item);
                     printf("Enter position: ");
                     scanf("%d",&n);
-                    add_anyPosition(n);
+                    add_anyPosition(item,n);
                     fflush(stdin);
                 }else
                 {
@@ -88,11 +88,31 @@ void display()
     printf("NULL");
 }
 
-void add_anyPosition(int n)
+void add_anyPosition(int item,int n)
 {
+    Node *P , *Q, *newNode;
+    P = Head;
+    newNode = (Node*)malloc(sizeof(Node));
+    
     if (position < n)
     {
         printf("Invalid position..\n");
         return;
+    }else
+    {
+        int i = 1;
+        while (i<n-1 && P->link!=NULL)
+        {
+            P = P->link;
+            i++;
+        }
+
+        Q = P->link;
+        newNode ->data = item;
+        newNode ->link = Q;
+        P->link = newNode;
     }
+
+
+    
 }
