@@ -1,3 +1,4 @@
+//In this Code we will learn how to create a list in doubely linked list and display from first to last 
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct doubely
