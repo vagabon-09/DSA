@@ -1,11 +1,11 @@
 // In this code we will learn how to display a doubely linked list from last to first
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct singly
+typedef struct doubley
 {
     int data;
-    struct singly *next;
-    struct sigly *prev;
+    struct doubley *next;
+    struct doubley *prev;
 } Node;
 
 Node *Head = NULL;
