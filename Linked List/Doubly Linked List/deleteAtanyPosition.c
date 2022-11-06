@@ -13,6 +13,7 @@ Node *last = NULL;
 
 void display();
 void create_list(int value);
+void delete (int position);
 // void delete_any();
 
 int index = 0;
@@ -35,6 +36,24 @@ int main()
         }
         else
         {
+            while (1)
+            {
+                printf("Do you want to delete(Y/N)?");
+                scanf("%c", &choice);
+                fflush(stdin);
+                if (choice == 'y' || choice == 'y')
+                {
+                    printf("Enter position: ");
+                    scanf("%d", &data);
+                    fflush(stdin);
+                    delete (data);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
             break;
         }
     }
@@ -66,6 +85,30 @@ void create_list(int value)
     }
 }
 
+void delete (int position)
+{
+    int p =1;
+    Node *ptr,*np;
+    ptr = head;
+    if (position > index)
+    {
+        printf("Invalid index \n");
+    }
+    else
+    {
+       while (ptr->next!=NULL && p < position-1)
+       {
+            ptr = ptr ->next;
+            p++;
+       }
+       
+       np = ptr ->next;
+       np = np->next;
+       ptr->next = np;
+       
+    }
+}
+
 void display()
 {
     Node *ptr;
@@ -75,6 +118,6 @@ void display()
         printf("%d -> ", ptr->data);
         ptr = ptr->next;
     }
-    printf("NULL\n");
-    printf("Index is %d", index);
+    printf("NULL");
+    
 }
