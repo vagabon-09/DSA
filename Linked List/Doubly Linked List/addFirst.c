@@ -32,44 +32,71 @@ int main()
         }
         else
         {
+            while (1)
+            {
+                printf("Do you want to add first(Y/N)?");
+                scanf("%c", &choice);
+                fflush(stdin);
+                if (choice == 'y' || choice == 'y')
+                {
+                    printf("Enter value: ");
+                    scanf("%d", &data);
+                    fflush(stdin);
+                    addFirst(data);
+                }
+                else
+                {
+                    break;
+                }
+            }
+
             break;
         }
     }
     display();
 }
 
-void create_list(int value){
-    Node *newPtr,*ptr;
-    newPtr =(Node*)malloc(sizeof(Node));
+void create_list(int value)
+{
+    Node *newPtr, *ptr;
+    newPtr = (Node *)malloc(sizeof(Node));
     newPtr->data = value;
     newPtr->next = NULL;
     newPtr->prev = NULL;
     if (head == NULL)
     {
         head = newPtr;
-    }else
+    }
+    else
     {
         ptr = head;
-        while (ptr->next!=NULL)
+        while (ptr->next != NULL)
         {
             ptr = ptr->next;
         }
         ptr->next = newPtr;
         newPtr->prev = ptr;
-        
     }
-    
-    
 }
 
-void display(){
+void addFirst(int value)
+{
+    Node *newPtr, *ptr;
+    newPtr = (Node*)malloc(sizeof(Node));
+    newPtr->data = value;
+    newPtr->next = head;
+    newPtr->prev = NULL;
+    head = newPtr;
+}
+
+void display()
+{
     Node *ptr;
     ptr = head;
-    while (ptr!=NULL)
+    while (ptr != NULL)
     {
-        printf("%d -> ",ptr->data);
+        printf("%d -> ", ptr->data);
         ptr = ptr->next;
     }
     printf("NULL");
-    
 }
