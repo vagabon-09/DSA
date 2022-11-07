@@ -12,7 +12,7 @@ Node *Head = NULL;
 Node *Last = NULL;
 void display();
 void createList(int value);
-// void addLast(int value2);
+void addLast(int value2);
 int main()
 {
     int data;
@@ -31,7 +31,23 @@ int main()
         }
         else
         {
-            
+            while (1)
+            {
+                printf("Do you want to add last(Y/N)?");
+                scanf("%c", &choice);
+                fflush(stdin);
+                if (choice == 'y' || choice == 'Y')
+                {
+                    printf("Enter value: ");
+                    scanf("%d", &data);
+                    addLast(data);
+                    fflush(stdin);
+                }
+                else
+                {
+                    break;
+                }
+            }
 
             break;
         }
@@ -63,16 +79,17 @@ void createList(int value)
     }
 }
 
-// void addLast(int value2)
-// {
-//     Node *add, *newPtr;
-//     add = Last;
-//     newPtr = (Node *)malloc(sizeof(Node));
-//     newPtr->data = value2;
-//     newPtr->next = NULL;
-//     newPtr->prev = add;
-//     Last = newPtr;
-// }
+void addLast(int value2)
+{
+    Node *newPtr, *ptr;
+    ptr = Last;
+    newPtr = (Node *)malloc(sizeof(Node));
+    newPtr->data = value2;
+    newPtr->next = NULL;
+    newPtr->prev = Last;
+    ptr->next = newPtr;
+    Last = newPtr;
+}
 
 void display()
 {
