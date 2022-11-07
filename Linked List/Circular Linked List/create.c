@@ -9,6 +9,7 @@ typedef struct circular
 Node *head = NULL;
 void display();
 void createList(int);
+void circular();
 int main()
 {
     int data;
@@ -30,37 +31,47 @@ int main()
             break;
         }
     }
+    circular();
     display();
 }
 
-void createList(int value){
-    Node *newPtr,*ptr;
-    newPtr = (Node*)malloc(sizeof(Node));
+void createList(int value)
+{
+    Node *newPtr, *ptr;
+    newPtr = (Node *)malloc(sizeof(Node));
     newPtr->data = value;
     newPtr->link = NULL;
-   if (head == NULL)
-   {
-    head = newPtr;
-   }else
-   {
+    if (head == NULL)
+    {
+        head = newPtr;
+    }
+    else
+    {
+        ptr = head;
+        while (ptr->link != NULL)
+        {
+            ptr = ptr->link;
+        }
+        ptr->link = newPtr;
+    }
+}
+
+void circular()
+{
+    Node *ptr;
     ptr = head;
-    while (ptr->link!=NULL)
+    while (ptr->link != NULL)
     {
         ptr = ptr->link;
     }
-    ptr->link = newPtr;
-    
-   }
-   
-   
-    
+    ptr->link = head;
 }
 
 void display()
 {
     Node *start;
     start = head;
-    while (start != NULL)
+    while (start->link != head)
     {
         printf("%d -> ", start->data);
         start = start->link;
