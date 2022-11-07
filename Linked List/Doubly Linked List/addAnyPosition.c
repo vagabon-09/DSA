@@ -27,6 +27,7 @@ int main()
             printf("Enter value: ");
             scanf("%d", &data);
             fflush(stdin);
+            createList(data);
         }
         else
         {
@@ -34,4 +35,40 @@ int main()
         }
     }
     display();
+}
+
+void createList(int value)
+{
+    Node *newPtr, *ptr;
+    newPtr = (Node *)malloc(sizeof(Node));
+    newPtr->data = value;
+    newPtr->next = NULL;
+    newPtr->prev = NULL;
+    if (head == NULL)
+    {
+        head = newPtr;
+    }
+    else
+    {
+        ptr = head;
+        while (ptr->next != NULL)
+        {
+            ptr = ptr->next;
+        }
+        ptr->next = newPtr;
+        newPtr->prev = ptr;
+        last = newPtr;
+    }
+}
+
+void display()
+{
+    Node *start;
+    start = head;
+    while (start != NULL)
+    {
+        printf("%d -> ", start->data);
+        start = start->next;
+    }
+    printf("NULL");
 }
