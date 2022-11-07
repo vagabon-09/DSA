@@ -76,5 +76,4 @@ void display()
         printf("%d -> ", start->data);
         start = start->link;
     }
-    printf("NULL");
 }
