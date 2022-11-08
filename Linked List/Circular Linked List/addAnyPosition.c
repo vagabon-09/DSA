@@ -45,7 +45,19 @@ int main()
                     if (position > index || position < 0)
                     {
                         printf("Invalid positon \n");
+                        break;
                     }
+                    else if (position == 1)
+                    {
+                        printf("Add at beginning...\n");
+                        break;
+                    }
+                    else if (position == index)
+                    {
+                        printf("Add at end..\n");
+                        break;
+                    }
+
                     else
                     {
                         printf("Enter item :");
@@ -74,7 +86,7 @@ void addAtAnyPosition(int item, int position)
     newPtr = (Node *)malloc(sizeof(Node));
     newPtr->data = item;
     ptr = head;
-    while (ptr->link != NULL && i < position-1)
+    while (ptr->link != NULL && i < position - 1)
     {
         ptr = ptr->link;
         i++;
