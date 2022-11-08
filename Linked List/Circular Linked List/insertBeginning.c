@@ -11,6 +11,7 @@ void display();
 void circular();
 void insertBeginning(int);
 void createList(int);
+
 int main()
 {
     int data;
@@ -29,11 +30,37 @@ int main()
         }
         else
         {
+            while (1)
+            {
+                printf("Do you want to insert beginning(Y/N)?");
+                scanf("%c", &choice);
+                fflush(stdin);
+                if (choice == 'y' || choice == 'y')
+                {
+                    printf("Enter data: ");
+                    scanf("%d", &data);
+                    insertBeginning(data);
+                    fflush(stdin);
+                }else
+                {
+                    break;
+                }
+                
+            }
+
             break;
         }
     }
     circular();
     display();
+}
+
+void insertBeginning(int value2){
+    Node* start;
+    start = (Node*)malloc(sizeof(Node));
+    start->data = value2;
+    start->link = head;
+    head = start;
 }
 
 void circular()
