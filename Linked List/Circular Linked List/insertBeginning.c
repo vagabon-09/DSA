@@ -24,8 +24,8 @@ int main()
         {
             printf("Enter data: ");
             scanf("%d", &data);
-            fflush(stdin);
             createList(data);
+            fflush(stdin);
         }
         else
         {
@@ -36,15 +36,15 @@ int main()
     display();
 }
 
-void circular(){
+void circular()
+{
     Node *ptr;
     ptr = head;
-    while (ptr->link!=NULL)
+    while (ptr->link != NULL)
     {
         ptr = ptr->link;
     }
     ptr->link = head;
-    
 }
 
 void createList(int value)
@@ -53,11 +53,19 @@ void createList(int value)
     newPtr = (Node *)malloc(sizeof(Node));
     newPtr->data = value;
     newPtr->link = NULL;
-    while (ptr->link != NULL)
+    if (head == NULL)
     {
-        ptr = ptr->link;
+        head = newPtr;
     }
-    ptr->link = newPtr;
+    else
+    {
+        ptr = head;
+        while (ptr->link != NULL)
+        {
+            ptr = ptr->link;
+        }
+        ptr->link = newPtr;
+    }
 }
 
 void display()
@@ -69,4 +77,5 @@ void display()
         printf("%d -> ", ptr->data);
         ptr = ptr->link;
     }
+    printf("%d", ptr->data);
 }
