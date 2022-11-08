@@ -8,6 +8,7 @@ typedef struct circular
 } Node;
 
 Node *head = NULL;
+int index = 0;
 void display();
 void createList(int);
 void circular();
@@ -34,11 +35,24 @@ int main()
             break;
         }
     }
+    circular();
     display();
+}
+
+void circular()
+{
+    Node *ptr;
+    ptr = head;
+    while (ptr->link != NULL)
+    {
+        ptr = ptr->link;
+    }
+    ptr->link = head;
 }
 
 void createList(int value)
 {
+    index++;
     Node *newptr, *ptr;
     newptr = (Node *)malloc(sizeof(Node));
     newptr->data = value;
@@ -62,9 +76,10 @@ void display()
 {
     Node *ptr;
     ptr = head;
-    while (ptr != NULL)
+    while (ptr->link != head)
     {
         printf("%d -> ", ptr->data);
         ptr = ptr->link;
     }
+    printf("%d", ptr->data);
 }
