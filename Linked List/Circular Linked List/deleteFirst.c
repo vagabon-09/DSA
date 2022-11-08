@@ -34,9 +34,19 @@ int main()
             break;
         }
     }
+    circular();
     display();
 }
-
+void circular()
+{
+    Node *ptr;
+    ptr = head;
+    while (ptr->link != NULL)
+    {
+        ptr = ptr->link;
+    }
+    ptr->link = head;
+}
 void createList(int value)
 {
     Node *ptr, *newPtr;
@@ -62,10 +72,10 @@ void display()
 {
     Node *ptr;
     ptr = head;
-    while (ptr != NULL)
+    while (ptr->link != head)
     {
         printf("%d -> ", ptr->data);
         ptr = ptr->link;
     }
-    
+    printf("%d", ptr->data);
 }
