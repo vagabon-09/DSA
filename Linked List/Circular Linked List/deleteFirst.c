@@ -10,7 +10,7 @@ typedef struct circular
 Node *head = NULL;
 void display();
 void createList(int);
-void deleteFirst();
+void deleteFirst(int);
 void circular();
 
 int main()
@@ -31,11 +31,38 @@ int main()
         }
         else
         {
+            while (1)
+            {
+                printf("Do you want to insert first(y/N)");
+                scanf("%c",&choice);
+                fflush(stdin);
+                if (choice == 'Y' || choice == 'y')
+                {
+                    printf("Enter data:");
+                    scanf("%d",&data);
+                    fflush(stdin);
+                    deleteFirst(data);
+                }else
+                {
+                    break;
+                }
+                
+                
+            }
+
             break;
         }
     }
     circular();
     display();
+}
+void deleteFirst(int value2)
+{
+    Node *newptr;
+    newptr = (Node *)malloc(sizeof(Node));
+    newptr->data = value2;
+    newptr->link = head;
+    head = newptr;
 }
 void circular()
 {
