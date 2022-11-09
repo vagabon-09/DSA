@@ -8,9 +8,10 @@ typedef struct queue
 } Node;
 
 Node *front = NULL;
-Node *read = NULL;
+Node *last = NULL;
 
 void display();
+//It is enqueue
 void createQueue(int);
 void enqueue(int);
 
@@ -56,6 +57,7 @@ void createQueue(int data)
             ptr = ptr->link;
         }
         ptr->link = newptr;
+        last->link = newptr;
     }
 }
 
