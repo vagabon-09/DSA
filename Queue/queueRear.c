@@ -64,5 +64,12 @@ void queueRear()
 {
     Node *rear;
     rear = last;
-    printf("%d", rear->data);
+    if (rear == NULL)
+    {
+        printf("%d", head->data);
+    }
+    else
+    {
+        printf("%d", rear->data);
+    }
 }
