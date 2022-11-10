@@ -33,6 +33,7 @@ int main()
             break;
         }
     }
+    display();
 }
 
 void createQueue(int data)
@@ -54,4 +55,16 @@ void createQueue(int data)
         }
         ptr->link = newptr;
     }
+}
+
+void display(){
+    Node *start;
+    start = head;
+    while (start!=NULL)
+    {
+        printf("%d -> ",start->data);
+        start = start->link;
+    }
+    printf("NULL");
+    
 }
