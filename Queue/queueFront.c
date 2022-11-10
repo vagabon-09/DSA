@@ -34,6 +34,8 @@ int main()
         }
     }
     display();
+    printf("Showing the Front of the queue..\n");
+    queueFront();
 }
 
 void createQueue(int data)
@@ -65,6 +67,12 @@ void display(){
         printf("%d -> ",start->data);
         start = start->link;
     }
-    printf("NULL");
+    printf("NULL\n");
     
+}
+
+void queueFront(){
+    Node *start;
+    start = head;
+    printf("%d",start->data);
 }
