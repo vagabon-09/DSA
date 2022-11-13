@@ -28,8 +28,9 @@ int main()
         {
             printf("Enter data:");
             scanf("%d", &data);
-            fflush(stdin);
             createQueue(data);
+            fflush(stdin);
+            
         }
         else
         {
@@ -57,7 +58,7 @@ void createQueue(int data)
             ptr = ptr->link;
         }
         ptr->link = newptr;
-        last->link = newptr;
+        last = newptr;
     }
 }
 
