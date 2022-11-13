@@ -71,8 +71,15 @@ void display()
     }
 }
 
-void pop(){
+void pop()
+{
     int last = arr[top];
-    top--;
-    // free(last);
+    if (top <= -1)
+    {
+        printf("Stack is empty now ..\n");
+    }
+    else
+    {
+        top--;
+    }
 }
