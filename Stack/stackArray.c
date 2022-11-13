@@ -32,23 +32,25 @@ int main()
 
 void createStack(int data)
 {
-    top++;
+
     if (top > 5)
     {
-        printf("Error: Stack overfollow...");
+        printf("Error: Stack overfollow...\n");
     }
     else
     {
-
+        top++;
         arr[top] = data;
     }
+    printf("%d \n", top);
 }
 
-void display(){
+void display()
+{
+
     printf("Available data in stack is: ");
-    for (int i = 0; i <= top; i++)
+    for (int i = 0; i < top; i++)
     {
-        printf("%d",arr[i]);
+        printf("%d ", arr[i]);
     }
-    
 }
