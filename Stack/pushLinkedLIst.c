@@ -59,12 +59,13 @@ void push(int value)
     }
 }
 
-void display(){
+void display()
+{
     Node *newptr;
     newptr = head;
-    while (newptr!=NULL)
+    while (newptr != NULL)
     {
-        printf("%d -> ",newptr->data);
+        printf("%d -> ", newptr->data);
         newptr = newptr->link;
     }
 }
