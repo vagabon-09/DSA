@@ -1,52 +1,54 @@
 #include <stdio.h>
-void bSerach(int,int);
-int arr[100];
+int bSerach(int);
+arr[6] = {5, 6, 7, 8, 9, 10};
 int main()
 {
-    int n;
     int data;
     char choice;
-    printf("Enter size of array between 1 to 100: ");
-    scanf("%d", &n);
+    int check;
+    printf("Do you want to serach any element(Y/N)?");
+    scanf("%c", &choice);
     fflush(stdin);
 
-    printf("Enter data of array: ");
-    for (int i = 0; i < n; i++)
+    if (choice == 'y' || choice == 'Y')
     {
-        scanf("%d", &arr[n]);
+        printf("Enter value: ");
+        scanf("%d", &data);
+        fflush(stdin);
+        check = bSerach(data);
+    }
+    else
+    {
+        return 0;
     }
 
-    while (1)
+    if (check == 1)
     {
-        printf("Do you want to serach any element(Y/N)?");
-        scanf("%c", &choice);
-        fflush(stdin);
-
-        if (choice == 'y' || choice == 'Y')
-        {
-            printf("Enter value: ");
-            scanf("%d", &data);
-            fflush(stdin);
-            bSerach(data, n);
-        }
-        else
-        {
-            break;
-        }
+        printf("Value is founded...");
+    }
+    else
+    {
+        printf("Value is not founde...");
     }
 }
 
-void bSerach(int data,int n)
+int bSerach(int data)
 {
-    for (int i = 0; i < n; i++)
+    int check ;
+    for (int i = 0; i <= 5; i++)
     {
+
         if (data == arr[i])
         {
-            printf("Yes, Value is founded...");
+
+            check = 1;
         }
         else
         {
-            printf("Sorry value is not found...");
+
+            check = 0;
         }
     }
+
+    return check;
 }
