@@ -1,5 +1,5 @@
 #include <stdio.h>
-void bSearch(int);
+void bSerach(int,int);
 int arr[100];
 int main()
 {
@@ -8,6 +8,7 @@ int main()
     char choice;
     printf("Enter size of array between 1 to 100: ");
     scanf("%d", &n);
+    fflush(stdin);
 
     printf("Enter data of array: ");
     for (int i = 0; i < n; i++)
