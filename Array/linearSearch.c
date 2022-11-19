@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <time.h>
+clock_t start, end;
+double cpu_time_used;
 int bSerach(int);
 int arr[6] = {5, 6, 7, 8, 9, 10};
 int main()
@@ -18,11 +21,13 @@ int main()
             printf("Enter value: ");
             scanf("%d", &data);
             fflush(stdin);
+            start = clock();
             check = bSerach(data);
+            end = clock();
         }
         else
         {
-            return 0;
+            break;
         }
 
         if (check == 1)
@@ -34,6 +39,8 @@ int main()
             printf("Value is not founde...\n");
         }
     }
+    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("Time taken by the program is %f \n", cpu_time_used);
 }
 
 int bSerach(int data)
