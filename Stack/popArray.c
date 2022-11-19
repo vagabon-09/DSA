@@ -19,7 +19,7 @@ int main()
         fflush(stdin);
         if (choice == 'y' || choice == 'Y')
         {
-            printf("Enter data: ");
+            printf("Push data: ");
             scanf("%d", &data);
             push(data);
             fflush(stdin);
@@ -65,7 +65,7 @@ void display()
 {
 
     printf("Available data in stack is: ");
-    for (int i = 0; i <= top; i++)
+    for (int i = top; i >= 0; i--)
     {
         printf("%d ", arr[i]);
     }
