@@ -15,7 +15,7 @@ int main()
     start = clock();
     shorting(arr, n);
     end = clock();
-    cpu_time = ((double) (start-end))/CLOCKS_PER_SEC;
+    cpu_time = ((double) (end-start))/CLOCKS_PER_SEC;
     display(arr, n);
     printf("Time taken by the program is: ");
     printf("%f",cpu_time);

@@ -1,4 +1,5 @@
 // In this program we will learn how to make a insertion sort
+#include<stdio.h>
 int main()
 {
     int arr[] = {20, 35, -15, 7, 55, 1, -22};
