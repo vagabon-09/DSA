@@ -22,10 +22,10 @@ int main()
         arr[i] = arr[min];
         arr[min] = temp;
         // if you want to show the pass then un comment the below two line
-        //  printf("this is %d -> pass\n", i);
-        //  display(arr);
+         printf("this is %d -> pass\n", i);
+         display(arr);
     }
-    display(arr);
+    // display(arr);
 }
 
 void display(int arr[])
