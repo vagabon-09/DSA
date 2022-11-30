@@ -5,4 +5,5 @@ This repo is only for DSA using c . If you are a beginner then it will help you 
 - [Linked List](https://github.com/vagabon-09/DSA/tree/master/Linked%20List)
 - [Queue](https://github.com/vagabon-09/DSA/tree/master/Queue)
 - [Sorting](https://github.com/vagabon-09/DSA/tree/master/Sorting)
-- []()
+- [Stack](https://github.com/vagabon-09/DSA/tree/master/Stack)
+
