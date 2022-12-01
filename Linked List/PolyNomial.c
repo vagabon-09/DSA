@@ -21,14 +21,16 @@ int main()
         int dataX;
         printf("Do you want to make a polynomial representation(Y/N)?");
         scanf("%c", &choice);
+        fflush(stdin);
         if (choice == 'y' || choice == 'Y')
         {
             printf("Enter Coficient: ");
             scanf("%d", &dataC);
-            fflush(stdin);
+
             printf("Enter exponent: ");
             scanf("%d", &dataX);
             createNode(dataC, dataX);
+            fflush(stdin);
         }
         else
         {
@@ -42,11 +44,16 @@ void display()
 {
     Node *ptr;
     ptr = head;
+
     while (ptr != NULL)
     {
-        printf("%d", ptr->coficient);
-        printf("X^%d\t", ptr->exponent);
+        printf("(%d", ptr->coficient);
+        printf("X^%d)", ptr->exponent);
         ptr = ptr->link;
+        if (ptr != NULL)
+        {
+            printf(" + ");
+        }
     }
 }
 
