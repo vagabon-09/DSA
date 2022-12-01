@@ -38,9 +38,9 @@ int main()
         {
             printf("Value is not founde...\n");
         }
+        cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+        printf("Time taken by the program is %f \n", cpu_time_used);
     }
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-    printf("Time taken by the program is %f \n", cpu_time_used);
 }
 
 int bSerach(int data)
