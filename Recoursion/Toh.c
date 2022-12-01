@@ -1,3 +1,4 @@
+/*In this code we will learn*/
 #include <stdio.h>
 
 void toh(int n, char s, char t, char d)
@@ -11,6 +12,6 @@ void toh(int n, char s, char t, char d)
 }
 int main()
 {
-    int disck = 3;
+    int disck = 1;
     toh(disck,'a','b','c');
 }
