@@ -1,4 +1,4 @@
-/*In this code we will learn*/
+/*In this code we will learn about tohur of honoi*/
 #include <stdio.h>
 
 void toh(int n, char s, char t, char d)
