@@ -3,15 +3,17 @@
 
 void toh(int n, char s, char t, char d)
 {
-    if (n>0)
+    if (n > 0)
     {
-        toh(n-1,s,d,t);
-        printf("\n Move disc from %c -> %c",s,d);
-        toh(n-1,t,s,d);
+        toh(n - 1, s, d, t);
+        printf("\n Move disc from %c -> %c", s, d);
+        toh(n - 1, t, s, d);
     }
 }
 int main()
 {
-    int disck = 1;
-    toh(disck,'a','b','c');
+    int disck;
+    printf("Enter the number of disc: ");
+    scanf("%d", &disck);
+    toh(disck, 'a', 'b', 'c');
 }
